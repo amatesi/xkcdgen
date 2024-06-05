@@ -231,15 +231,20 @@ words = [
 arraySize = words.length
 
 function generatepass(plength) {
-    randomNum = Math.floor(Math.random() * arraySize)
-    passphrase = words[randomNum]
-    iterSize = plength - 1
-    for (i = 0; i < iterSize; i++) {
-        randomNum = Math.floor(Math.random() * arraySize)
-        string = words[randomNum]
-        passphrase += ' ' + string
+    var symbols = "!@#$";
+    var passphrase = "";
+    for (var i = 0; i < plength; i++) {
+        var randomNum = Math.floor(Math.random() * arraySize);
+        var word = words[randomNum];
+        passphrase += (i !== 0 ? '-' : '') + word;
     }
-    return passphrase
+    var numbers = Math.floor(Math.random() * 9000) + 1000; // generates a random 4-digit number
+    passphrase += numbers;
+    for (var i = 0; i < 3; i++) {
+        var randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+        passphrase += randomSymbol;
+    }
+    return passphrase;
 }
 
 function populateform(enterlength) {
