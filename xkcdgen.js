@@ -230,12 +230,14 @@ words = [
 
 arraySize = words.length
 
-function generatepass(plength) {
+function generatepass() {
     var symbols = "!@#$";
     var passphrase = "";
-    for (var i = 0; i < plength; i++) {
+    for (var i = 0; i < 3; i++) {
         var randomNum = Math.floor(Math.random() * arraySize);
         var word = words[randomNum];
+        // Capitalize the first letter of the word
+        word = word.charAt(0).toUpperCase() + word.slice(1);
         passphrase += (i !== 0 ? '-' : '') + word;
     }
     var numbers = Math.floor(Math.random() * 9000) + 1000; // generates a random 4-digit number
