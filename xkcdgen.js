@@ -231,7 +231,7 @@ words = [
 arraySize = words.length
 
 function generatepass() {
-    var symbols = "!@#$";
+    var symbols = "!#%+@:=?*";
     var passphrase = "";
     for (var i = 0; i < 3; i++) {
         var randomNum = Math.floor(Math.random() * arraySize);
