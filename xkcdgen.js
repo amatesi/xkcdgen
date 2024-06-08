@@ -1,13 +1,15 @@
-
 // load
 document.body.onload = function() {
     populateform(5)
 };
 
 // select
-document.getElementById("text_area").onclick = function() {
-    this.select()
-};
+document.getElementById("text_area").addEventListener("click", function() {
+  this.select();
+});
+//document.getElementById("text_area").onclick = function() {
+//    this.select()
+//};
 
 // button
 document.getElementById("populate_button").onclick = function() {
@@ -15,9 +17,12 @@ document.getElementById("populate_button").onclick = function() {
 };
 
 // range
-document.getElementById("outupdate_txt").oninput = function() {
-    outputUpdate(this.value)
-};
+document.getElementById("outupdate_txt").addEventListener("input", function() {
+  outputUpdate(this.value);
+});
+//document.getElementById("outupdate_txt").oninput = function() {
+//    outputUpdate(this.value)
+//};
 
 // genpass
 words = [
